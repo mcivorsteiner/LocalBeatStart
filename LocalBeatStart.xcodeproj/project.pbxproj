@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A51121B1F525F1400DA5FF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A51121A1F525F1400DA5FF0 /* LaunchScreen.storyboard */; };
 		1A73B4F61F51F8ED0048237E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73B4F51F51F8ED0048237E /* AppDelegate.swift */; };
 		1A73B4F81F51F8ED0048237E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73B4F71F51F8ED0048237E /* ViewController.swift */; };
 		1A73B4FB1F51F8ED0048237E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A73B4F91F51F8ED0048237E /* Main.storyboard */; };
 		1A73B4FD1F51F8ED0048237E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A73B4FC1F51F8ED0048237E /* Assets.xcassets */; };
-		1A73B5001F51F8ED0048237E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A73B4FE1F51F8ED0048237E /* LaunchScreen.storyboard */; };
+		1A73B5091F51FA710048237E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A73B5081F51FA710048237E /* CoreLocation.framework */; };
+		1A9D35081F5222F300C55B2E /* SKApiObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D35071F5222F300C55B2E /* SKApiObjects.swift */; };
+		1A9D350A1F52369200C55B2E /* SKEventSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D35091F52369200C55B2E /* SKEventSearchResponse.swift */; };
+		1A9D350C1F5238D800C55B2E /* SKApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D350B1F5238D800C55B2E /* SKApiClient.swift */; };
+		1A9D350E1F52480C00C55B2E /* SKApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D350D1F52480C00C55B2E /* SKApiError.swift */; };
+		EB477A3843CB1C1FDD0B7764 /* Pods_LocalBeatStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7418EFBAEB030643B5EF39 /* Pods_LocalBeatStart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		028C06919B5E8068E1A05B5A /* Pods-LocalBeatStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalBeatStart.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocalBeatStart/Pods-LocalBeatStart.release.xcconfig"; sourceTree = "<group>"; };
+		03A064E3AD0AEF9232F93ADB /* Pods-LocalBeatStart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalBeatStart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocalBeatStart/Pods-LocalBeatStart.debug.xcconfig"; sourceTree = "<group>"; };
+		1A51121A1F525F1400DA5FF0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A73B4F21F51F8ED0048237E /* LocalBeatStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalBeatStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A73B4F51F51F8ED0048237E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A73B4F71F51F8ED0048237E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A73B4FA1F51F8ED0048237E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A73B4FC1F51F8ED0048237E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1A73B4FF1F51F8ED0048237E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A73B5011F51F8ED0048237E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A73B5081F51FA710048237E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1A9D35071F5222F300C55B2E /* SKApiObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKApiObjects.swift; sourceTree = "<group>"; };
+		1A9D35091F52369200C55B2E /* SKEventSearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKEventSearchResponse.swift; sourceTree = "<group>"; };
+		1A9D350B1F5238D800C55B2E /* SKApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKApiClient.swift; sourceTree = "<group>"; };
+		1A9D350D1F52480C00C55B2E /* SKApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKApiError.swift; sourceTree = "<group>"; };
+		6C7418EFBAEB030643B5EF39 /* Pods_LocalBeatStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalBeatStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A73B5091F51FA710048237E /* CoreLocation.framework in Frameworks */,
+				EB477A3843CB1C1FDD0B7764 /* Pods_LocalBeatStart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +56,8 @@
 			children = (
 				1A73B4F41F51F8ED0048237E /* LocalBeatStart */,
 				1A73B4F31F51F8ED0048237E /* Products */,
+				1A73B5071F51FA710048237E /* Frameworks */,
+				9C87EDB6EA4418C91CE96DF8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +72,36 @@
 		1A73B4F41F51F8ED0048237E /* LocalBeatStart */ = {
 			isa = PBXGroup;
 			children = (
+				1A51121A1F525F1400DA5FF0 /* LaunchScreen.storyboard */,
 				1A73B4F51F51F8ED0048237E /* AppDelegate.swift */,
 				1A73B4F71F51F8ED0048237E /* ViewController.swift */,
 				1A73B4F91F51F8ED0048237E /* Main.storyboard */,
 				1A73B4FC1F51F8ED0048237E /* Assets.xcassets */,
-				1A73B4FE1F51F8ED0048237E /* LaunchScreen.storyboard */,
 				1A73B5011F51F8ED0048237E /* Info.plist */,
+				1A9D35071F5222F300C55B2E /* SKApiObjects.swift */,
+				1A9D35091F52369200C55B2E /* SKEventSearchResponse.swift */,
+				1A9D350B1F5238D800C55B2E /* SKApiClient.swift */,
+				1A9D350D1F52480C00C55B2E /* SKApiError.swift */,
 			);
 			path = LocalBeatStart;
+			sourceTree = "<group>";
+		};
+		1A73B5071F51FA710048237E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A73B5081F51FA710048237E /* CoreLocation.framework */,
+				6C7418EFBAEB030643B5EF39 /* Pods_LocalBeatStart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C87EDB6EA4418C91CE96DF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				03A064E3AD0AEF9232F93ADB /* Pods-LocalBeatStart.debug.xcconfig */,
+				028C06919B5E8068E1A05B5A /* Pods-LocalBeatStart.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +111,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A73B5041F51F8ED0048237E /* Build configuration list for PBXNativeTarget "LocalBeatStart" */;
 			buildPhases = (
+				6D383D8BAE23C19842D83FB3 /* [CP] Check Pods Manifest.lock */,
 				1A73B4EE1F51F8ED0048237E /* Sources */,
 				1A73B4EF1F51F8ED0048237E /* Frameworks */,
 				1A73B4F01F51F8ED0048237E /* Resources */,
+				90C032E1B27A03C5B5A3A427 /* [CP] Embed Pods Frameworks */,
+				BA91D844B3761D74491AD56D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,6 +175,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D383D8BAE23C19842D83FB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocalBeatStart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90C032E1B27A03C5B5A3A427 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LocalBeatStart/Pods-LocalBeatStart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocalBeatStart/Pods-LocalBeatStart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA91D844B3761D74491AD56D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocalBeatStart/Pods-LocalBeatStart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1A73B4EE1F51F8ED0048237E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +238,10 @@
 			files = (
 				1A73B4F81F51F8ED0048237E /* ViewController.swift in Sources */,
 				1A73B4F61F51F8ED0048237E /* AppDelegate.swift in Sources */,
+				1A9D35081F5222F300C55B2E /* SKApiObjects.swift in Sources */,
+				1A9D350C1F5238D800C55B2E /* SKApiClient.swift in Sources */,
+				1A9D350A1F52369200C55B2E /* SKEventSearchResponse.swift in Sources */,
+				1A9D350E1F52480C00C55B2E /* SKApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,14 +254,6 @@
 				1A73B4FA1F51F8ED0048237E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1A73B4FE1F51F8ED0048237E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1A73B4FF1F51F8ED0048237E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -259,27 +354,35 @@
 		};
 		1A73B5051F51F8ED0048237E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03A064E3AD0AEF9232F93ADB /* Pods-LocalBeatStart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = QN2Y4FMRUV;
 				INFOPLIST_FILE = LocalBeatStart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcivorsteiner.LocalBeatStart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		1A73B5061F51F8ED0048237E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 028C06919B5E8068E1A05B5A /* Pods-LocalBeatStart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = QN2Y4FMRUV;
 				INFOPLIST_FILE = LocalBeatStart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcivorsteiner.LocalBeatStart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -302,6 +405,7 @@
 				1A73B5061F51F8ED0048237E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
