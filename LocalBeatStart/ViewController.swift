@@ -14,6 +14,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: Properties
     

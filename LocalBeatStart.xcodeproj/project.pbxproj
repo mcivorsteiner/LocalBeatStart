@@ -7,16 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A51121B1F525F1400DA5FF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A51121A1F525F1400DA5FF0 /* LaunchScreen.storyboard */; };
 		1A73B4F61F51F8ED0048237E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73B4F51F51F8ED0048237E /* AppDelegate.swift */; };
 		1A73B4F81F51F8ED0048237E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73B4F71F51F8ED0048237E /* ViewController.swift */; };
 		1A73B4FB1F51F8ED0048237E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A73B4F91F51F8ED0048237E /* Main.storyboard */; };
 		1A73B4FD1F51F8ED0048237E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A73B4FC1F51F8ED0048237E /* Assets.xcassets */; };
 		1A73B5091F51FA710048237E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A73B5081F51FA710048237E /* CoreLocation.framework */; };
-		1A9D35081F5222F300C55B2E /* SKApiObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D35071F5222F300C55B2E /* SKApiObjects.swift */; };
 		1A9D350A1F52369200C55B2E /* SKEventSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D35091F52369200C55B2E /* SKEventSearchResponse.swift */; };
 		1A9D350C1F5238D800C55B2E /* SKApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D350B1F5238D800C55B2E /* SKApiClient.swift */; };
 		1A9D350E1F52480C00C55B2E /* SKApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D350D1F52480C00C55B2E /* SKApiError.swift */; };
+		1AC8CA741F5DDF1900E8793F /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8CA731F5DDF1900E8793F /* SearchResultsController.swift */; };
+		1AC8CA771F5DEA9D00E8793F /* SKLocationObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8CA761F5DEA9D00E8793F /* SKLocationObjects.swift */; };
+		1AC8CA791F5DEB7C00E8793F /* SKIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8CA781F5DEB7C00E8793F /* SKIdentifier.swift */; };
+		1AC8CA7F1F5DECE400E8793F /* SKVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8CA7E1F5DECE400E8793F /* SKVenue.swift */; };
+		1AC8CA811F5DED0C00E8793F /* SKArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8CA801F5DED0C00E8793F /* SKArtist.swift */; };
+		1AC8CA831F5DED2900E8793F /* SKPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8CA821F5DED2800E8793F /* SKPerformance.swift */; };
+		1AC8CA851F5DED5400E8793F /* SKEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC8CA841F5DED5400E8793F /* SKEvent.swift */; };
 		EB477A3843CB1C1FDD0B7764 /* Pods_LocalBeatStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7418EFBAEB030643B5EF39 /* Pods_LocalBeatStart.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,10 +36,16 @@
 		1A73B4FC1F51F8ED0048237E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A73B5011F51F8ED0048237E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A73B5081F51FA710048237E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		1A9D35071F5222F300C55B2E /* SKApiObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKApiObjects.swift; sourceTree = "<group>"; };
 		1A9D35091F52369200C55B2E /* SKEventSearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKEventSearchResponse.swift; sourceTree = "<group>"; };
 		1A9D350B1F5238D800C55B2E /* SKApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKApiClient.swift; sourceTree = "<group>"; };
 		1A9D350D1F52480C00C55B2E /* SKApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKApiError.swift; sourceTree = "<group>"; };
+		1AC8CA731F5DDF1900E8793F /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
+		1AC8CA761F5DEA9D00E8793F /* SKLocationObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLocationObjects.swift; sourceTree = "<group>"; };
+		1AC8CA781F5DEB7C00E8793F /* SKIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKIdentifier.swift; sourceTree = "<group>"; };
+		1AC8CA7E1F5DECE400E8793F /* SKVenue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKVenue.swift; sourceTree = "<group>"; };
+		1AC8CA801F5DED0C00E8793F /* SKArtist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKArtist.swift; sourceTree = "<group>"; };
+		1AC8CA821F5DED2800E8793F /* SKPerformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPerformance.swift; sourceTree = "<group>"; };
+		1AC8CA841F5DED5400E8793F /* SKEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKEvent.swift; sourceTree = "<group>"; };
 		6C7418EFBAEB030643B5EF39 /* Pods_LocalBeatStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalBeatStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,16 +83,14 @@
 		1A73B4F41F51F8ED0048237E /* LocalBeatStart */ = {
 			isa = PBXGroup;
 			children = (
-				1A51121A1F525F1400DA5FF0 /* LaunchScreen.storyboard */,
 				1A73B4F51F51F8ED0048237E /* AppDelegate.swift */,
-				1A73B4F71F51F8ED0048237E /* ViewController.swift */,
+				1AC8CA871F5DEE1100E8793F /* Controllers */,
+				1AC8CA861F5DEE0500E8793F /* Networking */,
+				1AC8CA751F5DE9A500E8793F /* Models */,
+				1A51121A1F525F1400DA5FF0 /* LaunchScreen.storyboard */,
 				1A73B4F91F51F8ED0048237E /* Main.storyboard */,
 				1A73B4FC1F51F8ED0048237E /* Assets.xcassets */,
 				1A73B5011F51F8ED0048237E /* Info.plist */,
-				1A9D35071F5222F300C55B2E /* SKApiObjects.swift */,
-				1A9D35091F52369200C55B2E /* SKEventSearchResponse.swift */,
-				1A9D350B1F5238D800C55B2E /* SKApiClient.swift */,
-				1A9D350D1F52480C00C55B2E /* SKApiError.swift */,
 			);
 			path = LocalBeatStart;
 			sourceTree = "<group>";
@@ -93,6 +102,38 @@
 				6C7418EFBAEB030643B5EF39 /* Pods_LocalBeatStart.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AC8CA751F5DE9A500E8793F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D35091F52369200C55B2E /* SKEventSearchResponse.swift */,
+				1AC8CA761F5DEA9D00E8793F /* SKLocationObjects.swift */,
+				1AC8CA781F5DEB7C00E8793F /* SKIdentifier.swift */,
+				1AC8CA7E1F5DECE400E8793F /* SKVenue.swift */,
+				1AC8CA801F5DED0C00E8793F /* SKArtist.swift */,
+				1AC8CA821F5DED2800E8793F /* SKPerformance.swift */,
+				1AC8CA841F5DED5400E8793F /* SKEvent.swift */,
+				1A9D350D1F52480C00C55B2E /* SKApiError.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1AC8CA861F5DEE0500E8793F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D350B1F5238D800C55B2E /* SKApiClient.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		1AC8CA871F5DEE1100E8793F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A73B4F71F51F8ED0048237E /* ViewController.swift */,
+				1AC8CA731F5DDF1900E8793F /* SearchResultsController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		9C87EDB6EA4418C91CE96DF8 /* Pods */ = {
@@ -167,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A73B5001F51F8ED0048237E /* LaunchScreen.storyboard in Resources */,
 				1A73B4FD1F51F8ED0048237E /* Assets.xcassets in Resources */,
 				1A73B4FB1F51F8ED0048237E /* Main.storyboard in Resources */,
 			);
@@ -238,8 +278,14 @@
 			files = (
 				1A73B4F81F51F8ED0048237E /* ViewController.swift in Sources */,
 				1A73B4F61F51F8ED0048237E /* AppDelegate.swift in Sources */,
-				1A9D35081F5222F300C55B2E /* SKApiObjects.swift in Sources */,
+				1AC8CA831F5DED2900E8793F /* SKPerformance.swift in Sources */,
+				1AC8CA811F5DED0C00E8793F /* SKArtist.swift in Sources */,
+				1AC8CA771F5DEA9D00E8793F /* SKLocationObjects.swift in Sources */,
+				1AC8CA741F5DDF1900E8793F /* SearchResultsController.swift in Sources */,
+				1AC8CA851F5DED5400E8793F /* SKEvent.swift in Sources */,
+				1AC8CA7F1F5DECE400E8793F /* SKVenue.swift in Sources */,
 				1A9D350C1F5238D800C55B2E /* SKApiClient.swift in Sources */,
+				1AC8CA791F5DEB7C00E8793F /* SKIdentifier.swift in Sources */,
 				1A9D350A1F52369200C55B2E /* SKEventSearchResponse.swift in Sources */,
 				1A9D350E1F52480C00C55B2E /* SKApiError.swift in Sources */,
 			);

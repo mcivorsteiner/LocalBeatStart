@@ -15,7 +15,9 @@ class SKApiClient {
     
     let baseUrl = "https://api.songkick.com/api/3.0"
     
-    func eventSearch(lat: Double, lng: Double, completionHandler: @escaping (SKEventSearchResponse?, SKApiError?) -> Void) -> Void {
+    typealias eventHandlerType = (SKEventSearchResponse?, SKApiError?) -> Void
+    
+    func eventSearch(lat: Double, lng: Double, completionHandler: @escaping eventHandlerType) -> Void {
         let path = "/events.json?location=geo:\(lat),\(lng)&apikey=\(apiKey)"
         let requestUrl = baseUrl + path
         Alamofire.request(requestUrl).validate().responseJSON { response in
@@ -40,4 +42,33 @@ class SKApiClient {
             }
         }
     }
+    
+//    typealias locationHandlerType = (SKLocationQueryResponse?, SKApiError) -> Void
+//    
+//    func locationSearch(query: String, completionHandler: @escaping locationHandlerType) -> Void {
+//        let path = "/search/locations.json?query=\(query)&apikey=\(apiKey)"
+//        let requestUrl = baseUrl + path
+//        
+//        Alamofire.request(requestUrl).validate().responseJSON { response in
+//            switch response.result {
+//            case .success:
+//                do {
+//                    if let responseAsDictionary = response.result.value as? NSDictionary {
+//                        let responseObject = try SKEventSearchResponse(map: Mapper(JSON: responseAsDictionary))
+//                        completionHandler(responseObject, nil)
+//                    } else {
+//                        completionHandler(nil, .responseContentsError)
+//                    }
+//                } catch let error as MapperError {
+//                    print(error)
+//                    completionHandler(nil, .responseMappingError)
+//                } catch {
+//                    completionHandler(nil, .unknownError)
+//                }
+//            case .failure(let error):
+//                print(error)
+//                completionHandler(nil, .requestError)
+//            }
+//        }
+//    }
 }

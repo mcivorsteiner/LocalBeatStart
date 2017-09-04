@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LocalBeatStart/SKApiClient.swift"
-            timestampString = "525489784.70259"
+            timestampString = "526248575.751627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "eventSearch(lat:lng:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
