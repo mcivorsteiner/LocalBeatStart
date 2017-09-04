@@ -135,7 +135,7 @@ struct SKPerformance: Mappable {
     }
 }
 
-struct SKEvent: Mappable {
+class SKEvent: NSObject, Mappable {
     let id: Int
     let displayName: String
     let type: String
@@ -146,8 +146,12 @@ struct SKEvent: Mappable {
     let start: SKStart
     let performance: [SKPerformance]
     let ageRestriction: String?
+    var headliner: SKPerformance? {
+        let headliners = performance.filter { $0.billingIndex == 1 }
+        return headliners.first
+    }
     
-    init(map: Mapper) throws {
+    required init(map: Mapper) throws {
         try id = map.from("id")
         try displayName = map.from("displayName")
         try type = map.from("type")
@@ -158,5 +162,24 @@ struct SKEvent: Mappable {
         try start = map.from("start")
         try performance = map.from("performance")
         ageRestriction = map.optionalFrom("ageRestriction")
+    }
+}
+
+import MapKit
+
+extension SKEvent: MKAnnotation {
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: CLLocationDegrees(location.lat), longitude: CLLocationDegrees(location.lng))
+    }
+    var title: String? {
+        if let headlinerDisplayName = headliner?.artist.displayName {
+            return headlinerDisplayName
+        } else {
+            return displayName
+        }
+    }
+    
+    var subtitle: String? {
+        return venue.displayName
     }
 }

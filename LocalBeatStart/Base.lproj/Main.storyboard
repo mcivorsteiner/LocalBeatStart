@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,30 +23,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tMP-Ts-mFH">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMP-Ts-mFH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzi-De-SJa">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="localbeat-logo" translatesAutoresizingMaskIntoConstraints="NO" id="gvF-C8-d9q">
+                                <rect key="frame" x="16" y="624" width="200" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ZXd-BO-lg8"/>
+                                    <constraint firstAttribute="width" secondItem="gvF-C8-d9q" secondAttribute="height" multiplier="497:87" id="7jt-kP-FRt"/>
+                                    <constraint firstAttribute="width" constant="200" id="QjQ-AH-mZ7"/>
                                 </constraints>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="fetchConcerts" destination="BYZ-38-t0r" eventType="touchUpInside" id="ql3-KY-OLW"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="powered-by-songkick-black" translatesAutoresizingMaskIntoConstraints="NO" id="jcv-jx-4Ei">
+                                <rect key="frame" x="307" y="641" width="52" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="6l1-4C-sf2"/>
+                                    <constraint firstAttribute="width" secondItem="jcv-jx-4Ei" secondAttribute="height" multiplier="427:150" id="QvP-MQ-WAq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jcv-jx-4Ei" secondAttribute="bottom" constant="8" id="2fM-wL-tUk"/>
                             <constraint firstItem="tMP-Ts-mFH" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="3UM-uF-5ZD"/>
-                            <constraint firstAttribute="trailing" secondItem="Fzi-De-SJa" secondAttribute="trailing" id="A0i-xU-bCY"/>
+                            <constraint firstItem="gvF-C8-d9q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cc0-gv-SE0"/>
                             <constraint firstItem="tMP-Ts-mFH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qe4-vB-cwm"/>
                             <constraint firstItem="tMP-Ts-mFH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SGi-Kq-7AD"/>
                             <constraint firstAttribute="trailing" secondItem="tMP-Ts-mFH" secondAttribute="trailing" id="jyV-1V-l4l"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fzi-De-SJa" secondAttribute="bottom" id="pm0-LZ-gsJ"/>
-                            <constraint firstItem="Fzi-De-SJa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zNa-KI-A2a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jcv-jx-4Ei" secondAttribute="trailing" id="rkx-Di-yLa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gvF-C8-d9q" secondAttribute="bottom" constant="8" id="wxj-Uk-6Q9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -56,4 +62,8 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="localbeat-logo" width="994" height="174"/>
+        <image name="powered-by-songkick-black" width="427" height="150"/>
+    </resources>
 </document>

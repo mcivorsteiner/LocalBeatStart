@@ -15,26 +15,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: Outlets
     @IBOutlet weak var map: MKMapView!
     
-    
-    //MARK: Actions
-    
-    @IBAction func fetchConcerts() {
-        if let location = currentLocation {
-            SKClient.eventSearch(lat: location.coordinate.latitude, lng: location.coordinate.longitude) { [unowned self] responseObject, error in
-                if let responseObject = responseObject {
-                    print("Songkick Call Made Successfully")
-                } else {
-                    self.showAlert(title: "Error", message: String(describing: error))
-                }
-            }
-        }
-    }
-    
     //MARK: Properties
     
     let locManager = CLLocationManager()
     let SKClient = SKApiClient()
     var currentLocation: CLLocation? = nil
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +44,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    //MARK: Location Manager Delagate
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             currentLocation = location
-            let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+            fetchConcerts()
+            let span: MKCoordinateSpan = MKCoordinateSpanMake(0.3, 0.3)
             let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
             let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
             map.setRegion(region, animated: true)
@@ -75,11 +68,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locManager.requestLocation()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func showAlert(title: String, message: String, preferredStyle: UIAlertControllerStyle = .alert) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
@@ -89,7 +77,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         present(alertController, animated: true, completion: nil)
     }
-
-
+    
+    //MARK: Actions
+    
+    @IBAction func fetchConcerts() {
+        if let location = currentLocation {
+            SKClient.eventSearch(lat: location.coordinate.latitude, lng: location.coordinate.longitude) { [weak self] responseObject, error in
+                if let responseObject = responseObject {
+                    let events = responseObject.resultsPage.results.event
+                    self?.map.addAnnotations(events)
+                    print("Songkick Call Made Successfully")
+                } else {
+                    self?.showAlert(title: "Error", message: String(describing: error))
+                }
+            }
+        }
+    }
 }
 
