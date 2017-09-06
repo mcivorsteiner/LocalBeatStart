@@ -40,32 +40,27 @@
                                     <constraint firstAttribute="width" secondItem="jcv-jx-4Ei" secondAttribute="height" multiplier="427:150" id="QvP-MQ-WAq"/>
                                 </constraints>
                             </imageView>
-                            <searchBar contentMode="redraw" placeholder="Enter Location" translatesAutoresizingMaskIntoConstraints="NO" id="53x-rh-S8X">
-                                <rect key="frame" x="8" y="20" width="359" height="44"/>
-                                <color key="barTintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-Zl-HQp">
-                                <rect key="frame" x="8" y="20" width="359" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-Zl-HQp">
+                                <rect key="frame" x="8" y="28" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Qay-wY-9du"/>
+                                    <constraint firstAttribute="width" constant="40" id="S9V-GU-DV7"/>
+                                </constraints>
+                                <state key="normal" image="search-icon"/>
                                 <connections>
-                                    <segue destination="84j-n2-TsP" kind="presentation" id="pK1-h4-r4i"/>
+                                    <segue destination="84j-n2-TsP" kind="presentation" identifier="SearchSegue" id="Cuo-Ms-Y8T"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jcv-jx-4Ei" secondAttribute="bottom" constant="8" id="2fM-wL-tUk"/>
-                            <constraint firstItem="GDc-Zl-HQp" firstAttribute="top" secondItem="53x-rh-S8X" secondAttribute="top" id="2zh-YU-JWS"/>
                             <constraint firstItem="tMP-Ts-mFH" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="3UM-uF-5ZD"/>
                             <constraint firstItem="gvF-C8-d9q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cc0-gv-SE0"/>
+                            <constraint firstItem="GDc-Zl-HQp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OVY-Qe-0a4"/>
                             <constraint firstItem="tMP-Ts-mFH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qe4-vB-cwm"/>
-                            <constraint firstItem="53x-rh-S8X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="Qfs-8b-UAy"/>
-                            <constraint firstItem="53x-rh-S8X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RTd-LJ-UNr"/>
                             <constraint firstItem="tMP-Ts-mFH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SGi-Kq-7AD"/>
-                            <constraint firstItem="GDc-Zl-HQp" firstAttribute="height" secondItem="53x-rh-S8X" secondAttribute="height" id="Y5z-By-lDf"/>
-                            <constraint firstItem="GDc-Zl-HQp" firstAttribute="leading" secondItem="53x-rh-S8X" secondAttribute="leading" id="ZiN-qj-BOf"/>
-                            <constraint firstAttribute="trailing" secondItem="53x-rh-S8X" secondAttribute="trailing" constant="8" id="a8V-4j-lgp"/>
-                            <constraint firstItem="GDc-Zl-HQp" firstAttribute="width" secondItem="53x-rh-S8X" secondAttribute="width" id="fo0-5l-tdN"/>
+                            <constraint firstItem="GDc-Zl-HQp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="bAf-Y7-XL6"/>
                             <constraint firstAttribute="trailing" secondItem="tMP-Ts-mFH" secondAttribute="trailing" id="jyV-1V-l4l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jcv-jx-4Ei" secondAttribute="trailing" id="rkx-Di-yLa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gvF-C8-d9q" secondAttribute="bottom" constant="8" id="wxj-Uk-6Q9"/>
@@ -73,7 +68,6 @@
                     </view>
                     <connections>
                         <outlet property="Map" destination="tMP-Ts-mFH" id="rL6-Sq-pws"/>
-                        <outlet property="searchBar" destination="53x-rh-S8X" id="c4K-X1-f3t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,12 +83,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mAe-HM-6nx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" textLabel="lcg-L8-njg" style="IBUITableViewCellStyleDefault" id="mAe-HM-6nx">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mAe-HM-6nx" id="iP0-HA-nV2">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lcg-L8-njg">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -131,5 +134,6 @@
     <resources>
         <image name="localbeat-logo" width="994" height="174"/>
         <image name="powered-by-songkick-black" width="427" height="150"/>
+        <image name="search-icon" width="120" height="122"/>
     </resources>
 </document>

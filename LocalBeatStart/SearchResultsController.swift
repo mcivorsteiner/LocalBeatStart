@@ -8,9 +8,17 @@
 
 import UIKit
 
+protocol SearchResultsControllerDelegate: class {
+    func didSelectLocation(_ location: SKLocationResult)
+}
+
 class SearchResultsController: UITableViewController {
     
+    weak var delegate: SearchResultsControllerDelegate?
+    
     let searchController = UISearchController(searchResultsController: nil)
+    let dataSource = LocationResultsDataSource()
+    let SKClient = SKApiClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,30 +28,46 @@ class SearchResultsController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
+        
+        tableView.dataSource = dataSource
 //        searchController.delegate = self
     }
 
     func dismissSearchResultsController() {
         self.dismiss(animated: true, completion: nil)
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelectLocation(dataSource.location(at: indexPath))
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
 extension SearchResultsController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text!.characters.count <= 2 { return }
+        
+        SKClient.locationSearch(query: searchController.searchBar.text!) { [weak self] responseObject, error in
+            if let responseObject = responseObject {
+                let locations = responseObject.resultsPage.results.locations
+                self?.dataSource.update(with: locations)
+                self?.tableView.reloadData()
+            } else {
+                print("ERROR" + String(describing: error))
+                self?.showAlert(title: "Error", message: String(describing: error))
+            }
+        }
         print(searchController.searchBar.text!)
         
+    }
+    
+    func showAlert(title: String, message: String, preferredStyle: UIAlertControllerStyle = .alert) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
 

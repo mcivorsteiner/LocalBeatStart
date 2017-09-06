@@ -10,11 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, SearchResultsControllerDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchIcon: UIImageView!
     
     //MARK: Properties
     
@@ -45,19 +46,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchSegue" {
+            guard let navigationController = segue.destination as? UINavigationController, let searchController = navigationController.topViewController as? SearchResultsController else { return }
+            
+            searchController.delegate = self
+        }
+    }
+    
+    func didSelectLocation(_ location: SKLocationResult) {
+        fetchConcertsFrom(lat: location.city.coordinate!.latitude, lng: location.city.coordinate!.longitude)
+        setMapCenter(latitude: location.city.coordinate!.latitude, longitude: location.city.coordinate!.longitude)
+    }
+    
     //MARK: Location Manager Delagate
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             currentLocation = location
-            fetchConcerts()
-            let span: MKCoordinateSpan = MKCoordinateSpanMake(0.3, 0.3)
-            let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-            let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-            map.setRegion(region, animated: true)
+            fetchConcertsFrom(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
+            
+            setMapCenter(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         
             self.map.showsUserLocation = true
         }
+    }
+    
+    func setMapCenter(latitude: Double, longitude: Double) {
+        let span: MKCoordinateSpan = MKCoordinateSpanMake(0.3, 0.3)
+        let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        map.setRegion(region, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -81,16 +100,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Actions
     
-    @IBAction func fetchConcerts() {
-        if let location = currentLocation {
-            SKClient.eventSearch(lat: location.coordinate.latitude, lng: location.coordinate.longitude) { [weak self] responseObject, error in
-                if let responseObject = responseObject {
-                    let events = responseObject.resultsPage.results.event
-                    self?.map.addAnnotations(events)
-                    print("Songkick Call Made Successfully")
-                } else {
-                    self?.showAlert(title: "Error", message: String(describing: error))
-                }
+    func fetchConcertsFrom(lat: Double, lng: Double) {
+        SKClient.eventSearch(lat: lat, lng: lng) { [weak self] responseObject, error in
+            if let responseObject = responseObject {
+                let events = responseObject.resultsPage.results.events
+                self?.map.addAnnotations(events)
+                print("Songkick Call Made Successfully")
+            } else {
+                self?.showAlert(title: "Error", message: String(describing: error))
             }
         }
     }

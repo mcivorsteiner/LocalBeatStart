@@ -10,11 +10,24 @@ import Foundation
 import Mapper
 
 struct SKResults: Mappable {
-    let event: [SKEvent]
+    let events: [SKEvent]
+    let locations: [SKLocationResult]
     
     init(map: Mapper) throws {
-        try event = map.from("event")
+        do {
+            try events = map.from("event")
+        } catch MapperError.missingFieldError {
+            events = [SKEvent]()
+        }
+        
+        do {
+            try locations = map.from("location")
+        } catch MapperError.missingFieldError {
+            locations = []
+        }
     }
+    
+    
 }
 
 struct SKResultsPage: Mappable {
@@ -31,7 +44,7 @@ struct SKResultsPage: Mappable {
     }
 }
 
-struct SKEventSearchResponse: Mappable {
+struct SKApiResponse: Mappable {
     let resultsPage: SKResultsPage
     
     init(map: Mapper) throws {
