@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A59C0601F70807E00821FFE /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59C05F1F70807E00821FFE /* EventAnnotation.swift */; };
+		1A59C0621F7088D200821FFE /* EventAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59C0611F7088D200821FFE /* EventAnnotationView.swift */; };
+		1A59C0641F70923600821FFE /* EventDetailMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A59C0631F70923500821FFE /* EventDetailMapView.xib */; };
+		1A59C0661F70925E00821FFE /* EventDetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59C0651F70925E00821FFE /* EventDetailMapView.swift */; };
 		1A73B4F61F51F8ED0048237E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73B4F51F51F8ED0048237E /* AppDelegate.swift */; };
 		1A73B4F81F51F8ED0048237E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73B4F71F51F8ED0048237E /* ViewController.swift */; };
 		1A73B4FB1F51F8ED0048237E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A73B4F91F51F8ED0048237E /* Main.storyboard */; };
@@ -32,6 +36,10 @@
 		028C06919B5E8068E1A05B5A /* Pods-LocalBeatStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalBeatStart.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocalBeatStart/Pods-LocalBeatStart.release.xcconfig"; sourceTree = "<group>"; };
 		03A064E3AD0AEF9232F93ADB /* Pods-LocalBeatStart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalBeatStart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocalBeatStart/Pods-LocalBeatStart.debug.xcconfig"; sourceTree = "<group>"; };
 		1A51121A1F525F1400DA5FF0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A59C05F1F70807E00821FFE /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		1A59C0611F7088D200821FFE /* EventAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotationView.swift; sourceTree = "<group>"; };
+		1A59C0631F70923500821FFE /* EventDetailMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailMapView.xib; sourceTree = "<group>"; };
+		1A59C0651F70925E00821FFE /* EventDetailMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailMapView.swift; sourceTree = "<group>"; };
 		1A73B4F21F51F8ED0048237E /* LocalBeatStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalBeatStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A73B4F51F51F8ED0048237E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A73B4F71F51F8ED0048237E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +106,10 @@
 				1A73B4F91F51F8ED0048237E /* Main.storyboard */,
 				1A73B4FC1F51F8ED0048237E /* Assets.xcassets */,
 				1A73B5011F51F8ED0048237E /* Info.plist */,
+				1A59C05F1F70807E00821FFE /* EventAnnotation.swift */,
+				1A59C0611F7088D200821FFE /* EventAnnotationView.swift */,
+				1A59C0631F70923500821FFE /* EventDetailMapView.xib */,
+				1A59C0651F70925E00821FFE /* EventDetailMapView.swift */,
 			);
 			path = LocalBeatStart;
 			sourceTree = "<group>";
@@ -225,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A59C0641F70923600821FFE /* EventDetailMapView.xib in Resources */,
 				1A73B4FD1F51F8ED0048237E /* Assets.xcassets in Resources */,
 				1A73B4FB1F51F8ED0048237E /* Main.storyboard in Resources */,
 			);
@@ -302,10 +315,13 @@
 				1AC8CA8B1F5DF59900E8793F /* SKMetroArea.swift in Sources */,
 				1AC8CA851F5DED5400E8793F /* SKEvent.swift in Sources */,
 				1AC8CA891F5DF37500E8793F /* SKLocationResultObjects.swift in Sources */,
+				1A59C0661F70925E00821FFE /* EventDetailMapView.swift in Sources */,
 				1AC8CA8E1F5E1C8000E8793F /* LocationResultsDataSource.swift in Sources */,
 				1AC8CA7F1F5DECE400E8793F /* SKVenue.swift in Sources */,
 				1A9D350C1F5238D800C55B2E /* SKApiClient.swift in Sources */,
+				1A59C0621F7088D200821FFE /* EventAnnotationView.swift in Sources */,
 				1AC8CA791F5DEB7C00E8793F /* SKIdentifier.swift in Sources */,
+				1A59C0601F70807E00821FFE /* EventAnnotation.swift in Sources */,
 				1A9D350A1F52369200C55B2E /* SKApiResponse.swift in Sources */,
 				1A9D350E1F52480C00C55B2E /* SKApiError.swift in Sources */,
 			);

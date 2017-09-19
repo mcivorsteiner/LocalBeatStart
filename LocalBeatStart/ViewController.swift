@@ -10,7 +10,9 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, SearchResultsControllerDelegate {
+private let kEventAnnotationName = "concertDetailAnnotationName"
+
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, SearchResultsControllerDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var map: MKMapView!
@@ -30,7 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SearchResults
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        map.delegate = self
         locManager.delegate = self
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         
@@ -74,8 +76,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SearchResults
     
     func setMapCenter(latitude: Double, longitude: Double) {
         let span: MKCoordinateSpan = MKCoordinateSpanMake(0.3, 0.3)
-        let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        let mapCenterCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(mapCenterCoordinate, span)
         map.setRegion(region, animated: true)
     }
     
@@ -87,6 +89,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SearchResults
         if status == .authorizedWhenInUse {
             locManager.requestLocation()
         }
+    }
+    
+    // MARK: - MKMapViewDelegate methods
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation { return nil }
+        
+        var annotationView = self.map.dequeueReusableAnnotationView(withIdentifier: kEventAnnotationName)
+        
+        if annotationView == nil {
+            annotationView = EventAnnotationView(annotation: annotation, reuseIdentifier: kEventAnnotationName)
+        } else {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView as! EventAnnotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        map.setCenter((view.annotation?.coordinate)!, animated: true)
     }
     
     func showAlert(title: String, message: String, preferredStyle: UIAlertControllerStyle = .alert) {
@@ -104,7 +126,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SearchResults
         SKClient.eventSearch(lat: lat, lng: lng) { [weak self] responseObject, error in
             if let responseObject = responseObject {
                 let events = responseObject.resultsPage.results.events
-                self?.map.addAnnotations(events)
+                let eventAnnotations = events.map { EventAnnotation(skEvent: $0) }
+                // should remove existing annotations here
+                self?.map.removeAnnotations((self?.map.annotations)!)
+                self?.map.addAnnotations(eventAnnotations)
                 print("Songkick Call Made Successfully")
             } else {
                 self?.showAlert(title: "Error", message: String(describing: error))
