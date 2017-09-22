@@ -8,12 +8,13 @@
 
 import UIKit
 
-//protocol PersonDetailMapViewDelegate: class {
-//    func detailsRequestedForEvent(
-//}
+protocol EventDetailMapViewDelegate: class {
+    func detailsRequestedForEvent(annotation: EventAnnotation)
+}
 
 class EventDetailMapView: UIView {
     var annotation: EventAnnotation!
+    weak var delegate: EventDetailMapViewDelegate?
     
     @IBOutlet weak var backgroundContentButton: UIButton!
     @IBOutlet weak var artistNameLabel: UILabel!
@@ -21,6 +22,10 @@ class EventDetailMapView: UIView {
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var seeDetailsButton: UIButton!
     
+    @IBAction func seeDetailsClick(_ sender: Any) {
+        delegate?.detailsRequestedForEvent(annotation: annotation)
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -12,7 +12,7 @@ import CoreLocation
 
 private let kEventAnnotationName = "concertDetailAnnotationName"
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, SearchResultsControllerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, SearchResultsControllerDelegate, EventDetailMapViewDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var map: MKMapView!
@@ -24,6 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let locManager = CLLocationManager()
     let SKClient = SKApiClient()
     var currentLocation: CLLocation? = nil
+    var selectedEvent: EventAnnotation?
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,6 +54,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             guard let navigationController = segue.destination as? UINavigationController, let searchController = navigationController.topViewController as? SearchResultsController else { return }
             
             searchController.delegate = self
+        }
+        
+        if segue.identifier == "eventDetails" {
+            if let eventDetailViewController = segue.destination as? EventDetailsViewController {
+                eventDetailViewController.eventAnnotation = self.selectedEvent
+            }
         }
     }
     
@@ -100,11 +107,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         if annotationView == nil {
             annotationView = EventAnnotationView(annotation: annotation, reuseIdentifier: kEventAnnotationName)
+            (annotationView as! EventAnnotationView).eventDetailDelegate = self
         } else {
             annotationView!.annotation = annotation
         }
         
-        return annotationView as! EventAnnotationView
+        return annotationView
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -135,6 +143,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 self?.showAlert(title: "Error", message: String(describing: error))
             }
         }
+    }
+    
+    func detailsRequestedForEvent(annotation: EventAnnotation) {
+        self.selectedEvent = annotation
+        self.performSegue(withIdentifier: "eventDetails", sender: nil)
     }
 }
 

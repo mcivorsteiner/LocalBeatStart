@@ -13,6 +13,7 @@ private let kPersonMapPinImage = #imageLiteral(resourceName: "redMapPin")
 private let kEventMapAnimationTime = 0.300
 
 class EventAnnotationView: MKAnnotationView {
+    weak var eventDetailDelegate: EventDetailMapViewDelegate?
     weak var customCalloutView: EventDetailMapView?
 //    weak var customCalloutView: UIView?
     
@@ -73,7 +74,7 @@ class EventAnnotationView: MKAnnotationView {
     func loadEventDetailMapView() -> EventDetailMapView? {
         if let views = Bundle.main.loadNibNamed("EventDetailMapView", owner: self, options: nil) as? [EventDetailMapView], views.count > 0 {
             let eventDetailMapView = views.first!
-//            eventDetailMapView.delegate = self.eventDetailDelegate
+            eventDetailMapView.delegate = self.eventDetailDelegate
             
             if let eventAnnotation = annotation as? EventAnnotation {
                 eventDetailMapView.configureWithAnnotation(eventAnnotation)
@@ -89,5 +90,16 @@ class EventAnnotationView: MKAnnotationView {
         super.prepareForReuse()
         self.customCalloutView?.removeFromSuperview()
     }
-
+    
+    // MARK: - Detecting and reaction to taps on custom callout.
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        // if super passed hit test, return the result
+        if let parentHitView = super.hitTest(point, with: event) { return parentHitView }
+        else { // test in our custom callout.
+            if customCalloutView != nil {
+                return customCalloutView!.hitTest(convert(point, to: customCalloutView!), with: event)
+            } else { return nil }
+        }
+    }
 }

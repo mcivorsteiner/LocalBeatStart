@@ -11,6 +11,7 @@
 		1A59C0621F7088D200821FFE /* EventAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59C0611F7088D200821FFE /* EventAnnotationView.swift */; };
 		1A59C0641F70923600821FFE /* EventDetailMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A59C0631F70923500821FFE /* EventDetailMapView.xib */; };
 		1A59C0661F70925E00821FFE /* EventDetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59C0651F70925E00821FFE /* EventDetailMapView.swift */; };
+		1A59C06C1F70EFE300821FFE /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59C06B1F70EFE300821FFE /* EventDetailsViewController.swift */; };
 		1A73B4F61F51F8ED0048237E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73B4F51F51F8ED0048237E /* AppDelegate.swift */; };
 		1A73B4F81F51F8ED0048237E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73B4F71F51F8ED0048237E /* ViewController.swift */; };
 		1A73B4FB1F51F8ED0048237E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A73B4F91F51F8ED0048237E /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		1A59C0611F7088D200821FFE /* EventAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotationView.swift; sourceTree = "<group>"; };
 		1A59C0631F70923500821FFE /* EventDetailMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailMapView.xib; sourceTree = "<group>"; };
 		1A59C0651F70925E00821FFE /* EventDetailMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailMapView.swift; sourceTree = "<group>"; };
+		1A59C06B1F70EFE300821FFE /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		1A73B4F21F51F8ED0048237E /* LocalBeatStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalBeatStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A73B4F51F51F8ED0048237E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A73B4F71F51F8ED0048237E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				1A73B4F71F51F8ED0048237E /* ViewController.swift */,
 				1AC8CA731F5DDF1900E8793F /* SearchResultsController.swift */,
+				1A59C06B1F70EFE300821FFE /* EventDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				1A73B4F81F51F8ED0048237E /* ViewController.swift in Sources */,
 				1A73B4F61F51F8ED0048237E /* AppDelegate.swift in Sources */,
 				1AC8CA831F5DED2900E8793F /* SKPerformance.swift in Sources */,
+				1A59C06C1F70EFE300821FFE /* EventDetailsViewController.swift in Sources */,
 				1AC8CA811F5DED0C00E8793F /* SKArtist.swift in Sources */,
 				1AC8CA771F5DEA9D00E8793F /* SKLocationObjects.swift in Sources */,
 				1AC8CA741F5DDF1900E8793F /* SearchResultsController.swift in Sources */,
